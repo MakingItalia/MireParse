@@ -1,0 +1,17 @@
+EXPORTS
+    _ZN5Token8ToStringEv @1
+    _ZN5TokenC1E9TokenTypePv @2
+    _ZN5TokenC2E9TokenTypePv @3
+    _ZN5TokenD0Ev @4
+    _ZN5TokenD1Ev @5
+    _ZN5TokenD2Ev @6
+    _ZN9TokenType5clearEv @7
+    _ZN9TokenTypeD0Ev @8
+    _ZN9TokenTypeD1Ev @9
+    _ZTI5Token @10 DATA
+    _ZTI9TokenType @11 DATA
+    _ZTS5Token @12 DATA
+    _ZTS9TokenType @13 DATA
+    _ZTV5Token @14 DATA
+    _ZTV9TokenType @15 DATA
+    _get_output_format @16

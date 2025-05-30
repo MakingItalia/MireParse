@@ -1,0 +1,18 @@
+# depslib dependency file v1.0
+1748640015 source:c:\users\giovanni\documents\cpp2\mireparse\src\tokentype.cpp
+	"TokenType.h"
+
+1748640104 c:\users\giovanni\documents\cpp2\mireparse\include\tokentype.h
+	<string>
+	<list>
+	<iostream>
+
+1748637823 source:c:\users\giovanni\documents\cpp2\mireparse\src\token.cpp
+	"Token.h"
+
+1748637616 c:\users\giovanni\documents\cpp2\mireparse\include\token.h
+	<string>
+	<list>
+	<iostream>
+	"tokentype.h"
+
