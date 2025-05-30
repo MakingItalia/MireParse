@@ -18,7 +18,7 @@
 //============================================= VALUE TYPE
 
 SHADER_API enum class ValueType {
-    NONE,  // Aggiunto per inizializzazione di default
+    NONE,  // Default Value
     Identifier,
     Integer,
     Boolean,
