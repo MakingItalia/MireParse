@@ -1,77 +1,69 @@
 #ifndef TOKENTYPE_H
 #define TOKENTYPE_H
 
-#pragma once
-
+#include "Export.h"
 #include <string>
-#include <list>
-#include <iostream>
 
-//===========================
+enum class ValueType {
+           Null,
+     Identifier,
+        Integer,
+        Float,
+        Boolean,
+        String,
+        Equals,
+        NotEquals,
+        Greater,
+        Less,
+        INCLUDE,
+        SETGLOBAL,
+        SET,
+        ADD,
+        SUBTRACT,
+        MULTIPLY,
+        DIVIDE,
+        TO,
+        FROM,
+        BY,
+        IF,
+        THEN,
+        ELSE,
+        ENDIF,
+        WHILE,
+        ENDWHILE,
+        CALL,
+        BLOCK,
+        ENDBLOCK,
+        YIELD };
 
-#ifdef SHADERLIB_EXPORTS
-#define SHADER_API __declspec(dllexport)
-#else
-#define SHADER_API __declspec(dllimport)
-#endif // SHADERLIB_EXPORTS
-
-//============================================= VALUE TYPE
-
-SHADER_API enum class ValueType {
-    NONE,  // Default Value
-    Identifier,
-    Integer,
-    Boolean,
-    String,
-    Equals,
-    NotEquials,
-    Greater,
-    Less,
-    INCLUDE,
-    SET,
-    ADD,
-    SUBTRACT,
-    MULTIPLY,
-    DIVIDE,
-    TO,
-    FROM,
-    BY,
-    IF,
-    THEN,
-    ELSE,
-    WHILE,
-    ENDWHILE,
-    CALL,
-    BLOCK,
-    ENDBLOCK,
-    YIELD
-};
-
-//=========================================== TOKEN TYPE
-
-SHADER_API class TokenType {
+class SHADER_API TokenType {
 public:
+    TokenType();
+    TokenType(int value);
+    TokenType(float value);
+    TokenType(bool value);
+    TokenType(const std::string& value);
+    virtual ~TokenType();
 
-    //Implicit Conversion
-    TokenType() : value(nullptr), type(ValueType::NONE) {}
-    TokenType(int val) : type(ValueType::Integer) { value = new int(val); }
-    TokenType(float val) : type(ValueType::Boolean) { value = new bool(val); }
-    TokenType(std::string val) : type(ValueType::String) { value = new std::string(val); }
-
-    //Clear Values
     void clear();
+    ValueType getType() const;
+    std::string ToString();
 
-    //Destructor
-    virtual ~TokenType() { clear(); };
+    //Get Generic Value
+    void* GetValue();
 
-    //Getter
-    ValueType getType() const { return type; }
-
-protected:
+    template <typename T>
+    T GetValueAs() { return *static_cast<T*>(m_objectValue); }
 
 private:
-    void* value;
-    ValueType type;
+    ValueType m_type;
+    void* m_objectValue;
+
+    union {
+        int iValue;
+        float fValue;
+        std::string* sValue;
+    };
 };
 
 #endif // TOKENTYPE_H

@@ -1,21 +1,17 @@
 #include "Token.h"
 
-//Constructor
 Token::Token(TokenType tokenType, void* objectValue)
-{
-    this->m_tokenType = tokenType;
-    this->m_obectValue = objectValue;
+    : m_tokenType(tokenType), m_objectValue(objectValue) {}
+
+Token::~Token() {
+    // TODO: Gestire distruzione se necessario
 }
 
-
-Token::~Token()
-{
-    //dtor
-}
-
-
-std::string Token::ToString()
-{
-
+std::string Token::ToString() {
+    // TODO: Implementa come serve
     return "";
+}
+
+TokenType Token::getType() const {
+    return m_tokenType;
 }

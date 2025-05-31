@@ -1,38 +1,21 @@
 #ifndef TOKEN_H
 #define TOKEN_H
 
-#pragma once
-
 #include <string>
-#include <list>
-#include <iostream>
-#include "tokentype.h"
+#include "Export.h"
+#include "TokenType.h"
 
-//===========================
+class SHADER_API Token {
+public:
+    Token(TokenType tokenType, void* objectValue);
+    ~Token();
 
-#ifdef SHADERLIB_EXPORTS
-#define SHADER_API __declspec(dllexport)
-#else
-#define SHADER_API __declspec(dllimport)
-#endif // SHADERLIB_EXPORTS
+    std::string ToString();
+    TokenType getType() const;
 
-
-
-SHADER_API class Token
-{
-    public:
-        SHADER_API Token(TokenType tokenType, void* objectValue);
-        std::string ToString();
-
-        virtual ~Token();
-
-    protected:
-
-    private:
+private:
     TokenType m_tokenType;
-    void* m_obectValue;
-
+    void* m_objectValue;
 };
-
 
 #endif // TOKEN_H

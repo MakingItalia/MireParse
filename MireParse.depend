@@ -1,18 +1,18 @@
 # depslib dependency file v1.0
-1748640015 source:c:\users\giovanni\documents\cpp2\mireparse\src\tokentype.cpp
+1748700061 source:c:\users\giovanni\documents\cpp2\mireparse\src\tokentype.cpp
 	"TokenType.h"
 
-1748640104 c:\users\giovanni\documents\cpp2\mireparse\include\tokentype.h
+1748728626 c:\users\giovanni\documents\cpp2\mireparse\include\tokentype.h
+	"Export.h"
 	<string>
-	<list>
-	<iostream>
 
-1748637823 source:c:\users\giovanni\documents\cpp2\mireparse\src\token.cpp
+1748684914 source:c:\users\giovanni\documents\cpp2\mireparse\src\token.cpp
 	"Token.h"
 
-1748637616 c:\users\giovanni\documents\cpp2\mireparse\include\token.h
+1748684902 c:\users\giovanni\documents\cpp2\mireparse\include\token.h
 	<string>
-	<list>
-	<iostream>
-	"tokentype.h"
+	"Export.h"
+	"TokenType.h"
+
+1748684960 c:\users\giovanni\documents\cpp2\mireparse\include\export.h
 

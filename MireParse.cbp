@@ -23,9 +23,11 @@
 			</Target>
 		</Build>
 		<Compiler>
+			<Add option="-std=c++11" />
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
+		<Unit filename="include/Export.h" />
 		<Unit filename="include/Token.h" />
 		<Unit filename="include/TokenType.h" />
 		<Unit filename="src/Token.cpp" />
