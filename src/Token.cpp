@@ -4,11 +4,11 @@ Token::Token(TokenType tokenType, void* objectValue)
     : m_tokenType(tokenType), m_objectValue(objectValue) {}
 
 Token::~Token() {
-    // TODO: Manage Destructor
+    // TODO: Gestire distruzione se necessario
 }
 
 std::string Token::ToString() {
-    // TODO: Need to Implement 
+    // TODO: Implementare come serve
     return "";
 }
 
