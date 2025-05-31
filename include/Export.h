@@ -1,7 +1,7 @@
 #ifndef EXPORT_H
 #define EXPORT_H
 
-// Comment dllimport/dllexport definitions to avoid problems with gcc (MinGW) if you do not create DLLs.
+// Comment dllimport/dllexport definitions to avoid problems with gcc (MinGW)
 #define SHADER_API
 
 /*
